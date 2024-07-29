@@ -1,0 +1,14 @@
+<button
+  class="button"
+  (mousedown)="showText()"
+>Click to see ngIf</button>
+<div *ngIf="textShow">ngIf Text</div>
+<button
+  class="button"
+  (mousedown)="showFor()"
+>Click to see ngFor</button>
+<ul *ngIf="forShow">
+  <ng-container *ngFor="let item of array;">
+    <li class="li">{{item}}</li>
+  </ng-container>
+</ul>

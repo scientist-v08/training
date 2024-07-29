@@ -1,0 +1,38 @@
+<div class="center">
+  <div class="div__form-row">
+    <label for="numberOfForms">Select number of products:</label>
+    <select
+      class="div__form-input"
+      id="numberOfForms"
+      [(ngModel)]="selectedNumber"
+      (click)="onSelectionChange()"
+    >
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+  </div>
+
+  <div *ngFor="let form of forms; let i = index">
+    <form [ngClass]="getClass()">
+      <div class="div__form-row">
+        <label for="productName{{i}}">Product Name:</label>
+        <input class="div__form-input" name="productName" [(ngModel)]="form.productName" />
+      </div>
+      <div class="div__form-row">
+        <label for="productType{{i}}">Product Type:</label>
+        <input class="div__form-input" name="productType" [(ngModel)]="form.productType" />
+      </div>
+      <div class="div__form-row">
+        <label for="productQuantity{{i}}">Product Quantity:</label>
+        <input class="div__form-input" type="number" name="productQuantity" [(ngModel)]="form.productQuantity" />
+      </div>
+    </form>
+  </div>
+
+  <div class="all-buttons">
+    <button class="button" (mousedown)="onSubmit()">{{submit | uppercase}}</button>
+    <button class="button" (mousedown)="classToggler()">{{check | uppercase}}</button>
+  </div>
+</div>

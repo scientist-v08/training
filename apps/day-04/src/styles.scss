@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(#fde68a, #fcd34d);
+}
+
+.h1 {
+  position: absolute;
+  top: 3%;
+  font-size: 3rem;
+}
+
+.content {
+  margin: 84px;
+}
