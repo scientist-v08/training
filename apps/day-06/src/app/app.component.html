@@ -1,0 +1,26 @@
+<div class="container">
+  <header class="header">
+    <h1 class="h1">Day 06</h1>
+    <strong class="strong">CONTROL VALUE ACCESSOR</strong>
+  </header>
+
+  <main class="main">
+    <form
+      [formGroup]="form"
+    >
+      <div class="div__form">
+        <div class="div__form-separate">
+          <label for="firstname">First name: </label>
+          <input id="firstname" formControlName="firstname">
+        </div>
+        <div>
+          <training-cva-component [formGroup]="nameGrouping" formGroupName="nameGroup"></training-cva-component>
+        </div>
+      </div>
+    </form>
+    <button
+      (click)="onSubmit()"
+      class="button"
+    >Submit</button>
+  </main>
+</div>
