@@ -21,6 +21,7 @@
     <button
       (click)="onSubmit()"
       class="button"
+      [disabled]="!form.valid"
     >Submit</button>
   </main>
 </div>
