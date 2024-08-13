@@ -55,7 +55,15 @@ import { Subscription } from 'rxjs';
     <div [formGroup]="formGroup" class="div__form">
       <div class="div__form-separate">
         <label for="middleName">Middle name: </label>
-        <input id="middleName" formControlName="middlename" (blur)="onTouched()">
+        <div class="validation_errors">
+          <input id="middleName" formControlName="middlename" (blur)="onTouched()">
+          <small
+            class="text"
+            *ngIf="formGroup.controls['middlename'].errors?.['required'] && formGroup.controls['middlename'].touched"
+          >
+            Middle name is required
+          </small>
+        </div>
       </div>
       <div class="div__form-separate">
         <label for="lastname">Last name: </label>
@@ -63,6 +71,16 @@ import { Subscription } from 'rxjs';
       </div>
     </div>
   `,
+  styles: [`
+    .validation_errors {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0 !important;
+    }
+    .text {
+      color: red;
+    }
+  `],
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: CvaComponent,

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'training-root',
@@ -10,7 +10,7 @@ export class AppComponent {
   form: FormGroup = new FormGroup({
     firstname: new FormControl<string>('', { nonNullable: true }),
     nameGroup: new FormGroup({
-      middlename: new FormControl<string>('', { nonNullable: true }),
+      middlename: new FormControl<string>('', { nonNullable: true, validators: [Validators.required] }),
       lastname: new FormControl<string>('', { nonNullable: true }),
     })
   });

@@ -9,7 +9,8 @@
     "day-03": "npx nx run day-03:serve:development --port 4203",
     "day-04": "npx nx run day-04:serve:development --port 4204",
     "day-05": "npx nx run day-05:serve:development --port 4205",
-    "day-06": "npx nx run day-06:serve:development --port 4206"
+    "day-06": "npx nx run day-06:serve:development --port 4206",
+    "day-07": "npx nx run day-07:serve:development --port 4207"
   },
   "private": true,
   "dependencies": {
